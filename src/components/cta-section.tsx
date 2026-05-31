@@ -1,31 +1,41 @@
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
+import { ContactModal } from "@/components/contact-modal"
 
 export function CTASection() {
+  const [modalOpen, setModalOpen] = useState(false)
+
   return (
-    <section className="py-24 px-6 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10">
-      <div className="max-w-4xl mx-auto text-center">
-        <div className="slide-up">
-          <h2 className="text-5xl font-bold text-foreground mb-6 font-sans text-balance">Готовы вырасти вместе с нами?</h2>
-          <p className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
-            Оставьте заявку — и мы проведём бесплатную консультацию, разберём ваш бизнес и предложим конкретный план продвижения.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 pulse-button text-lg px-8 py-4"
-            >
-              Получить консультацию
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8 py-4 bg-transparent"
-            >
-              Смотреть услуги
-            </Button>
+    <>
+      <section className="py-24 px-6 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="slide-up">
+            <h2 className="text-5xl font-bold text-foreground mb-6 font-sans text-balance">Готовы вырасти вместе с нами?</h2>
+            <p className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
+              Оставьте заявку — и мы проведём бесплатную консультацию, разберём ваш бизнес и предложим конкретный план продвижения.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 pulse-button text-lg px-8 py-4"
+                onClick={() => setModalOpen(true)}
+              >
+                Получить консультацию
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8 py-4 bg-transparent"
+                onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
+              >
+                Смотреть услуги
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <ContactModal open={modalOpen} onOpenChange={setModalOpen} />
+    </>
   )
 }
