@@ -8,7 +8,7 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <h2 className="font-orbitron text-2xl font-bold text-white mb-4">
-              MEDIA<span className="text-red-500">PRO</span>
+              E<span className="text-red-500">@</span>E
             </h2>
             <p className="font-space-mono text-gray-300 mb-6 max-w-md">
               Маркетинговое агентство полного цикла. Брендинг, реклама, SMM, SEO, дизайн и контент — всё для роста вашего бизнеса.
@@ -96,7 +96,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t border-red-500/20">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="font-space-mono text-gray-400 text-sm">2025 MEDIAPRO. Все права защищены.</p>
+            <p className="font-space-mono text-gray-400 text-sm">2025 E@E. Все права защищены.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a
                 href="#"
